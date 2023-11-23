@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ivanti-ace-client-side-solution",
+    "id": "bc1b503a-0ce5-41a5-a89d-d202c90f1175",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ivanti-ace description"
+      },
+      "longDescription": {
+        "default": "ivanti-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ivanti-ace Feature",
+        "description": "The feature that activates elements of the ivanti-ace solution.",
+        "id": "2807d281-bfb9-4b0d-a525-c55d6f204ad3",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ivanti-ace.sppkg"
+  }
+}

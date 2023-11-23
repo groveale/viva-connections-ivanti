@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "16.16.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "ivanti-ace",
+    "libraryId": "bc1b503a-0ce5-41a5-a89d-d202c90f1175",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ivanti-ace",
+    "solutionShortDescription": "ivanti-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Image",
+    "componentName": "createRequest"
+  }
+}

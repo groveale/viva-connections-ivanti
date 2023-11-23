@@ -1,0 +1,85 @@
+{
+  "type": "AdaptiveCard",
+  "body": [{
+      "type": "Container",
+      "items": [{
+        "type": "TextBlock",
+        "size": "Default",
+        "weight": "Default",
+        "text": "${$root.numberOfRequests}",
+        "horizontalAlignment": "Center"
+      }],
+      "bleed": true,
+      "style": "accent"
+    },
+    {
+      "type": "Container",
+      "items": [{
+        "type": "TextBlock",
+        "text": "${$root.strings.QuickViewDescription}",
+        "wrap": true,
+        "spacing": "Medium"
+      }],
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "spacing": "Large",
+      "style": "emphasis",
+      "$data": "${$root.requests}",
+      "items": [{
+        "type": "ColumnSet",
+        "columns": [{
+            "type": "Column",
+            "items": [{
+                "type": "TextBlock",
+                "text": "${$root.strings.OpenedLabel}: ${lastUpdatedString}",
+                "wrap": true,
+                "size": "Small",
+                "weight": "Bolder"
+              },
+              {
+                "type": "TextBlock",
+                "text": "${number}: ${category}",
+                "wrap": true,
+                "size": "Medium",
+                "weight": "Bolder"
+              },
+              {
+                "type": "TextBlock",
+                "text": "${shortDescription}",
+                "wrap": true,
+                "size": "Small",
+                "weight": "Normal"
+              }
+
+            ],
+            "width": "stretch"
+          },
+          {
+            "type": "Column",
+            "items": [{
+              "type": "Image",
+              "url": "https://raw.githubusercontent.com/pnp/AdaptiveCards-Templates/main/samples/help-desk/assets/arrow-forward.png"
+            }],
+            "horizontalAlignment": "Right",
+            "verticalContentAlignment": "Center",
+            "width": "16px"
+          }
+        ],
+
+        "selectAction": {
+          "type": "Action.Submit",
+          "associatedInputs": "none",
+          "data": {
+            "id": "selectTicket",
+            "incidentNumber": "${number}"
+          }
+        }
+
+      }]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5"
+}

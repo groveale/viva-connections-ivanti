@@ -6,7 +6,7 @@
           "type": "TextBlock",
           "size": "Medium",
           "weight": "Bolder",
-          "text": "${$root.strings.NewFormHeader}"
+          "text": "${$root.strings.ConfirmFormHeader}"
         }],
         "style": "emphasis",
         "bleed": true,
@@ -24,7 +24,7 @@
       },
       {
         "type": "TextBlock",
-        "text": "${$root.ticket.number}",
+        "text": "${$root.request.number}",
         "wrap": true,
         "spacing": "Small"
       },
@@ -45,7 +45,7 @@
                 "items": [{
                   "type": "Image",
                   "style": "Person",
-                  "url": "${$root.ticket.requestedBy.imageUrl}",
+                  "url": "${$root.request.requestedBy.imageUrl}",
                   "size": "Small"
                 }]
               },
@@ -75,7 +75,7 @@
           },
           {
             "type": "TextBlock",
-            "text": "{{DATE(${$root.ticket.LastUpdatedString},COMPACT)}}",
+            "text": "${$root.request.lastUpdatedString}",
             "wrap": true,
             "spacing": "Small"
           }
@@ -91,23 +91,10 @@
             "weight": "Bolder"
           },
           {
-            "type": "Input.ChoiceSet",
-            "choices": [{
-                "title": "${$root.strings.CategoryPlaceholder}",
-                "value": " "
-              }, {
-                "title": "IT Request",
-                "value": "IT Request"
-              },
-              {
-                "title": "Incident Reporting",
-                "value": "Incident Reporting"
-              }
-            ],
-            "placeholder": "${$root.strings.CategoryPlaceholder}",
-            "spacing": "Small",
-            "id": "category",
-            "value": " "
+            "type": "TextBlock",
+            "text": "${$root.request.category}",
+            "wrap": true,
+            "spacing": "Small"
           }
         ]
       },
@@ -122,27 +109,10 @@
         }]
       },
       {
-        "type": "Input.ChoiceSet",
-        "choices": [{
-            "title": "${$root.strings.UrgencyPlaceholder}",
-            "value": " "
-          }, {
-            "title": "Low",
-            "value": "Low"
-          },
-          {
-            "title": "Medium",
-            "value": "Medium"
-          },
-          {
-            "title": "High",
-            "value": "High"
-          }
-        ],
-        "placeholder": "${$root.strings.UrgencyPlaceholder}",
-        "id": "urgency",
-        "spacing": "Small",
-        "value": " "
+        "type": "TextBlock",
+        "text": "${$root.request.urgency}",
+        "wrap": true,
+        "spacing": "Small"
       },
       {
         "type": "Container",
@@ -155,12 +125,10 @@
         }]
       },
       {
-        "type": "Input.Text",
-        "placeholder": "${$root.strings.DescriptionPlaceholder}",
-        "isMultiline": true,
-        "spacing": "Small",
-        "id": "description",
-        "maxLength": 300
+        "type": "TextBlock",
+        "text": "${$root.request.shortDescription}",
+        "wrap": true,
+        "spacing": "Small"
       },
       {
         "type": "Container",
@@ -200,10 +168,10 @@
                       "type": "ActionSet",
                       "actions": [{
                         "type": "Action.Submit",
-                        "title": "${$root.strings.ConfirmButtonLabel}",
+                        "title": "${$root.strings.SubmitButtonLabel}",
                         "style": "positive",
                         "data": {
-                          "id": "confirm"
+                          "id": "submit"
                         }
                       }]
                     }]
@@ -216,5 +184,5 @@
       }
     ],
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.3"
+    "version": "1.5"
   }

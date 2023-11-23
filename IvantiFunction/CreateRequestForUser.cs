@@ -8,28 +8,27 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace microsoft
+namespace groveale
 {
-    public static class CreateIvantiIncident
+    public static class CreateRequestForUser
     {
-        [FunctionName("CreateIvantiIncident")]
+        [FunctionName("CreateRequestForUser")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            string name = req.Query["name"];
+            string usersEmail = req.Query["usersEmail"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
+            usersEmail = usersEmail ?? data?.usersEmail;
+            var request = data?.request;
 
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+            // Just responds back with the useremail and request
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(new { usersEmail, request});
         }
     }
 }
