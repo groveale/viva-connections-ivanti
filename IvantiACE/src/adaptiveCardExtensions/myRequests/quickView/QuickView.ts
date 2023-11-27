@@ -18,6 +18,7 @@ export class QuickView extends BaseAdaptiveCardQuickView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
+
     let numberOfRequests: string = strings.CardViewNoRequests;
     if (this.state.requests.length === 1) {
       numberOfRequests = `${this.state.requests.length.toString()} ${strings.CardViewTextSingular}`;
