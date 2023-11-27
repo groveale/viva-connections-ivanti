@@ -25,7 +25,7 @@ define([], function() {
     "CancelButtonLabel": "Discard",
     "SubmitButtonLabel": "Submit",
     "ConfirmButtonLabel": "Confirm",
-    "ImageUrl": "https://reckittstorage.blob.core.windows.net/viva-connections-icons/myhelpimage.svg",
+    "ImageUrl": "https://vivaconnectionssql9eb8.blob.core.windows.net/img/myhelpimage-1.svg",
     "ProfileImageUrl": "https://secure.gravatar.com/avatar/ef9c26e764df8eeed6304f719f580706?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAG-4.png",
   }
 });
